@@ -1,6 +1,6 @@
 #include <MeAuriga.h>
 
-MeUltrasonicSensor ultrasonic(PORT_9);
+MeUltrasonicSensor ultrasonic(PORT_10);
 
 void setup()
 {
