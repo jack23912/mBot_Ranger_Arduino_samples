@@ -40,31 +40,23 @@
 /*
  * Beard in mind that it is configured to work at 115.200 baud rate !!!!!
  */
-MeEncoderOnBoard Encoder_1(SLOT1);
-MeEncoderOnBoard Encoder_2(SLOT2);
+MeEncoderOnBoard Encoder_1(SLOT2); // Left motor
+MeEncoderOnBoard Encoder_2(SLOT1); // Right motor
 
 void isr_process_encoder1(void)
 {
-  if(digitalRead(Encoder_1.getPortB()) == 0)
-  {
-    Encoder_1.pulsePosMinus();
-  }
-  else
-  {
-    Encoder_1.pulsePosPlus();;
-  }
+	if (digitalRead(Encoder_1.getPortB()) == 0)
+		Encoder_1.pulsePosMinus();
+	else
+		Encoder_1.pulsePosPlus();
 }
 
 void isr_process_encoder2(void)
 {
-  if(digitalRead(Encoder_2.getPortB()) == 0)
-  {
-    Encoder_2.pulsePosMinus();
-  }
-  else
-  {
-    Encoder_2.pulsePosPlus();
-  }
+	if (digitalRead(Encoder_2.getPortB()) == 0)
+		Encoder_2.pulsePosMinus();
+	else
+		Encoder_2.pulsePosPlus();
 }
 
 void setup()
